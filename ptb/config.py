@@ -13,4 +13,5 @@ class Settings:
     _db_host = env("POSTGRES_HOST")
     _db_name = env("POSTGRES_NAME")
 
-    db_url = f"asyncpg+postgresql://{_db_login}:{_db_password}@{_db_host}:{_db_port}/{_db_name}"
+    db_url = f"postgresql+asyncpg://{_db_login}:{_db_password}@{_db_host}:{_db_port}/{_db_name}"
+    
