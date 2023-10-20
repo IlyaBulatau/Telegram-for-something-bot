@@ -21,17 +21,17 @@ if config.config_file_name is not None:
 
 section = config.config_ini_section
 
-config.set_main_option(section, "POSTGRES_LOGIN", Settings._db_login)
-config.set_main_option(section, "POSTGRES_PASSWORD", Settings._db_password)
-config.set_main_option(section, "POSTGRES_HOST", Settings._db_host)
-config.set_main_option(section, "POSTGRES_PORT", Settings._db_port)
-config.set_main_option(section, "POSTGRES_NAME", Settings._db_name)
+config.set_section_option(section, "POSTGRES_LOGIN", Settings._db_login)
+config.set_section_option(section, "POSTGRES_PASSWORD", Settings._db_password)
+config.set_section_option(section, "POSTGRES_HOST", Settings._db_host)
+config.set_section_option(section, "POSTGRES_PORT", Settings._db_port)
+config.set_section_option(section, "POSTGRES_NAME", Settings._db_name)
 
 # add your model's MetaData object here
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = None
+target_metadata = Base.metadata
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
