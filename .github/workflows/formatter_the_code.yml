@@ -24,6 +24,10 @@ jobs:
     - name: Install Dependences
       run: |
         poetry install
+
+    - name: Install black
+      run: |
+        poetry add black
         
     - name: Apply black
       run: |
