@@ -7,6 +7,9 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from alembic import context
 
+from ptb.config import Settings
+from ptb.models import Base, User
+
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
@@ -15,6 +18,14 @@ config = context.config
 # This line sets up loggers basically.
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
+
+section = config.config_ini_section
+
+config.set_main_option(section, "POSTGRES_LOGIN", Settings._db_login)
+config.set_main_option(section, "POSTGRES_PASSWORD", Settings._db_password)
+config.set_main_option(section, "POSTGRES_HOST", Settings._db_host)
+config.set_main_option(section, "POSTGRES_PORT", Settings._db_port)
+config.set_main_option(section, "POSTGRES_NAME", Settings._db_name)
 
 # add your model's MetaData object here
 # for 'autogenerate' support
