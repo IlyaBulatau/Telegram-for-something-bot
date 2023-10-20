@@ -25,9 +25,9 @@ jobs:
       run: |
         poetry install
 
-    - name: Install pylind
+    - name: Install pylint
       run: |
-        poetry add pylind
+        poetry add pylint
         
     - name: Analysing the code with pylint
       run: |
