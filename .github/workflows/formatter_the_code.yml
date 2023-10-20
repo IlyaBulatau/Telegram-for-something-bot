@@ -23,7 +23,7 @@ jobs:
 
     - name: Install Dependences
       run: |
-        poetry install
+        poetry install --no-interaction
 
     - name: Install black
       run: |
@@ -31,4 +31,4 @@ jobs:
         
     - name: Apply black
       run: |
-       black .
+       poetry run black .
