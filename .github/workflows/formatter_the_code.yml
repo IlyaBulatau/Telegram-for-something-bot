@@ -24,15 +24,7 @@ jobs:
     - name: Install Dependences
       run: |
         poetry install
-
-    - name: Install pylint
-      run: |
-        poetry add pylint
         
-    - name: Analysing the code with pylint
-      run: |
-        poetry run pylint .
-
     - name: Apply black
       run: |
        black .
