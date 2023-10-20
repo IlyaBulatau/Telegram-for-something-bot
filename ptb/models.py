@@ -6,13 +6,18 @@ from datetime import datetime
 
 
 class Base(DeclarativeBase):
-    created_on: orm.Mapped[datetime] = orm.mapped_column(db.DateTime(), server_default=db.func.now())
+    created_on: orm.Mapped[datetime] = orm.mapped_column(
+        db.DateTime(), server_default=db.func.now()
+    )
 
 
 class User(Base):
     __tablename__ = "user"
 
-    user_id: orm.Mapped[db.Integer] = orm.mapped_column(db.Integer(), primary_key=True, autoincrement=True)
-    telegram_id: orm.Mapped[db.BigInteger] = orm.mapped_column(db.BigInteger(), nullable=False, unique=True)
+    user_id: orm.Mapped[db.Integer] = orm.mapped_column(
+        db.Integer(), primary_key=True, autoincrement=True
+    )
+    telegram_id: orm.Mapped[db.BigInteger] = orm.mapped_column(
+        db.BigInteger(), nullable=False, unique=True
+    )
     username: orm.Mapped[db.String] = orm.mapped_column(db.String(), nullable=True)
-    

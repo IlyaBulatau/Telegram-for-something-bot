@@ -1,10 +1,10 @@
 from telegram.ext import (
-                        ApplicationBuilder,
-                        ContextTypes,
-                        CommandHandler,
-                        filters,
-                        MessageHandler,
-                        )
+    ApplicationBuilder,
+    ContextTypes,
+    CommandHandler,
+    filters,
+    MessageHandler,
+)
 from telegram import Update
 
 import logging
@@ -13,10 +13,11 @@ from config import Settings
 
 
 logging.basicConfig(
-    style='{',
+    style="{",
     format="{asctime} | {name} | {levelname} | {message}",
-    level=logging.INFO,  
+    level=logging.INFO,
 )
+
 
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text="OK")
@@ -24,17 +25,24 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def info_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if context.args:
-        await context.bot.send_message(chat_id=update.effective_chat.id, text=" ".join(context.args))
+        await context.bot.send_message(
+            chat_id=update.effective_chat.id, text=" ".join(context.args)
+        )
         return
     await context.bot.send_message(chat_id=update.effective_chat.id, text="Not args")
 
 
 async def unknow_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.bot.send_message(chat_id=update.effective_chat.id, text="Unknow message, sorry")
+    await context.bot.send_message(
+        chat_id=update.effective_chat.id, text="Unknow message, sorry"
+    )
 
 
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.bot.send_message(chat_id=update.effective_chat.id, text=update.message.text)
+    await context.bot.send_message(
+        chat_id=update.effective_chat.id, text=update.message.text
+    )
+
 
 if __name__ == "__main__":
     token = Settings.token
