@@ -7,7 +7,7 @@ services:
     env_file:
       - .env
     ports:
-      - "54321:${POSTGRES_PORT}"
+      - "${POSTGRES_PORT}:5432"
     environment:
       - POSTGRES_USER=${POSTGRES_LOGIN}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
