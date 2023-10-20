@@ -31,7 +31,7 @@ jobs:
         
     - name: Analysing the code with pylint
       run: |
-        pylint .
+        poetry run pylint .
 
     - name: Apply black
       run: |
