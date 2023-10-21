@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  formatting:
+  linting-procces:
     runs-on: ubuntu-latest
     
     steps:
@@ -24,11 +24,7 @@ jobs:
     - name: Install Dependences
       run: |
         poetry install --no-interaction
-
-    - name: Install black
+    
+    - name: flake8 black
       run: |
-        poetry add black
-        
-    - name: Apply black
-      run: |
-       poetry run black .
+       poetry run flake8 .
