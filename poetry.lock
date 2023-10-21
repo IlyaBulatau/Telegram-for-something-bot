@@ -1003,4 +1003,4 @@ devenv = ["black", "check-manifest", "flake8", "pyroma", "pytest (>=4.3)", "pyte
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "f5964c899341f145001e167dc36cc045525a0d085adec8ea0dbd793f176cfbc7"
+content-hash = "37a4af4d0e8d2ef2340d061fbe315735fe0359c0faae30db25de72543c9a87b8"
