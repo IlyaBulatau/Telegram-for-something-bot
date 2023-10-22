@@ -9,3 +9,7 @@ run:
 
 restart:
 	docker restart $(CONTAINERS)
+
+migrate:
+	make $(restart)
+	docker exec telegram_bot alembic upgrade head

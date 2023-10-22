@@ -8,3 +8,6 @@ make run
 ```
 make restart
 ```
+- ### apply migrate
+```
+make migrate
