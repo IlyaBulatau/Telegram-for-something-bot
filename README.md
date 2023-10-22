@@ -8,6 +8,11 @@ make run
 ```
 make restart
 ```
+- ### create migration, after first start bot, create and apply migration
+```
+make migration
+```
 - ### apply migrate
 ```
 make migrate
+```

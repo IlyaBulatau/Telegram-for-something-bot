@@ -10,6 +10,12 @@ run:
 restart:
 	docker restart $(CONTAINERS)
 
-migrate:
+migration:
 	make $(restart)
+	docker exec telegram_bot alembic revision --autogenerate
+
+migrate:
 	docker exec telegram_bot alembic upgrade head
+
+stop:
+	docker stop $(CONTAINERS)
