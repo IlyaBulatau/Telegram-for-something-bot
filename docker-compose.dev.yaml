@@ -12,7 +12,7 @@ services:
       - .env
     volumes:
     - ./ptb:/code/bot/ptb
-    - ./migrations:/code/bot/migrations
+    - migrations:/code/bot/migrations
 
   postgres:
     image: postgres:14-alpine
@@ -30,3 +30,4 @@ services:
   
 volumes:
   postgres_data:
+  migrations:
