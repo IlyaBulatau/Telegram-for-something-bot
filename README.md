@@ -1,5 +1,5 @@
 # To Runned
-
+## **During first start the bot, create and apply migration!**
 - ### run in containers 
 ```
 make run
@@ -8,11 +8,15 @@ make run
 ```
 make restart
 ```
-- ### create migration, after first start bot, create and apply migration
+- ### create migration 
 ```
 make migration
 ```
 - ### apply migrate
 ```
 make migrate
+```
+- ### stop all containers
+```
+make stop
 ```
