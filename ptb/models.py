@@ -11,8 +11,8 @@ class Base(DeclarativeBase):
     )
 
 
-class User(Base):
-    __tablename__ = "user"
+class Person(Base):
+    __tablename__ = "person"
 
     user_id: orm.Mapped[db.Integer] = orm.mapped_column(
         db.Integer(), primary_key=True, autoincrement=True
