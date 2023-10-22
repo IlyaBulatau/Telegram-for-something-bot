@@ -13,6 +13,10 @@ COPY . .
 
 COPY .env .
 
+COPY bot.entrypoint.sh .
+
+RUN chmod 777 bot.entrypoint.sh
+
 RUN poetry install --no-interaction --no-ansi
 
-CMD [ "python3", "ptb/main.py" ]
+ENTRYPOINT [ "./bot.entrypoint.sh" ]
