@@ -11,7 +11,8 @@ services:
     env_file:
       - .env
     volumes:
-    - ./ptb:/code/bot/ptb  
+    - ./ptb:/code/bot/ptb
+    - ./migrations:/code/bot/migrations
 
   postgres:
     image: postgres:14-alpine
@@ -19,7 +20,7 @@ services:
     env_file:
       - .env
     ports:
-      - "${POSTGRES_PORT}:5432"
+      - "54321:${POSTGRES_PORT}"
     environment:
       - POSTGRES_USER=${POSTGRES_LOGIN}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
